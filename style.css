@@ -271,3 +271,9 @@ html:has(#mode-switcher [value="dark"]:checked) {
     /* Remove any default margin/padding from the image */
     display: block; 
 }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        padding-bottom: 70px;
+    }
