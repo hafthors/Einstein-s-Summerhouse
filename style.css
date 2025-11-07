@@ -50,7 +50,35 @@ h2
     text-align: center;
 }
 
+/* Default styles for all screens (Mobile-First approach) */
+.light-control-container {
+    display: flex; /* Use flexbox for easy alignment */
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Add some space around the controls */
+    text-align: center; /* Ensure any inline text is centered */
+}
 
+/* Ensure the image doesn't take up too much vertical space by limiting its width */
+#myImage {
+    margin: 15px 0; /* Add space above and below the image */
+    max-width: 80%; /* Ensure it's responsive and won't overflow */
+    height: auto;
+}
+
+/* --- Media Query for Larger Screens (Optional but Recommended) --- */
+@media (min-width: 601px) {
+    .light-control-container {
+        flex-direction: row; /* Layout items horizontally on larger screens */
+        justify-content: center; /* Center the group of items */
+        gap: 30px; /* Space between the items */
+    }
+    
+    /* Ensure the buttons have the correct margin when laid out horizontally */
+    .light-control-container button:first-child {
+        margin-right: 30px; 
+    }
+}
 
 
 header {
