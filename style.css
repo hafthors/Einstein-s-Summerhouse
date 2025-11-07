@@ -65,20 +65,19 @@ h2
     max-width: 80%; /* Ensure it's responsive and won't overflow */
     height: auto;
 }
+/* Ensure the controls are tightly packed on mobile */
+@media (max-width: 600px) {
+    .light-control-container button {
+        margin-top: 5px;   /* Small space above */
+        margin-bottom: 5px; /* Small space below */
+        width: 100%;       /* Make buttons full width for easy tapping */
+        box-sizing: border-box; /* Important: keeps padding/border inside the 100% width */
+    }
 
-/* --- Media Query for Larger Screens (Optional but Recommended) --- */
-@media (min-width: 601px) {
-    .light-control-container {
-        flex-direction: row; /* Layout items horizontally on larger screens */
-        justify-content: center; /* Center the group of items */
-        gap: 30px; /* Space between the items */
-    }
-    
-    /* Ensure the buttons have the correct margin when laid out horizontally */
-    .light-control-container button:first-child {
-        margin-right: 30px; 
-    }
+    /* We already added margin to the image in the previous step, which is good: */
+    /* #myImage { margin: 15px 0; } */
 }
+
 
 
 header {
