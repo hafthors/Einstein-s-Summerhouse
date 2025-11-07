@@ -50,33 +50,32 @@ h2
     text-align: center;
 }
 
-/* Default styles for all screens (Mobile-First approach) */
-.light-control-container {
-    display: flex; /* Use flexbox for easy alignment */
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: center; /* Center items horizontally */
-    padding: 20px; /* Add some space around the controls */
-    text-align: center; /* Ensure any inline text is centered */
+
+   .light-control-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
 }
 
-/* Ensure the image doesn't take up too much vertical space by limiting its width */
-#myImage {
-    margin: 15px 0; /* Add space above and below the image */
-    max-width: 80%; /* Ensure it's responsive and won't overflow */
-    height: auto;
-}
-/* Ensure the controls are tightly packed on mobile */
-@media (max-width: 600px) {
-    .light-control-container button {
-        margin-top: 5px;   /* Small space above */
-        margin-bottom: 5px; /* Small space below */
-        width: 100%;       /* Make buttons full width for easy tapping */
-        box-sizing: border-box; /* Important: keeps padding/border inside the 100% width */
-    }
+/* For small screens (like iPhone Mini ~375px wide) */
+@media (max-width: 400px) {
+  .light-control-container {
+    padding: 10px;
+    gap: 6px;
+  }
 
-    /* We already added margin to the image in the previous step, which is good: */
-    /* #myImage { margin: 15px 0; } */
+  .light-control-container button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .light-control-container img {
+    width: 70px;
+  }
 }
+
 
 
 
