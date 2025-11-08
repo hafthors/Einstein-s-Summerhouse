@@ -253,12 +253,12 @@ html:has(#mode-switcher [value="dark"]:checked) {
     color-scheme: dark;
 }
 
- .footer-nav {
+.footer-nav {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #fff; /* or your background color */
-  padding: 10px 0; /* adjust height */
+  background-color: #fff;
+  padding: 14px 0;
 }
 
 .nav-container {
@@ -268,14 +268,26 @@ html:has(#mode-switcher [value="dark"]:checked) {
 }
 
 .nav-button img {
-  width: 20px; /* slightly smaller icons */
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
-/* For smaller screens */
+/* For medium screens (tablets, small laptops) */
+@media (max-width: 850px) {
+  .footer-nav {
+    padding: 10px 0;
+  }
+
+  .nav-button img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* For very small screens (like iPhone Mini) */
 @media (max-width: 400px) {
   .footer-nav {
-    padding: 6px 0; /* makes footer thinner */
+    padding: 6px 0;
   }
 
   .nav-button img {
@@ -286,4 +298,3 @@ html:has(#mode-switcher [value="dark"]:checked) {
 
 
 
-   
