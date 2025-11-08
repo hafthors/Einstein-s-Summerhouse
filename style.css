@@ -46,34 +46,8 @@ h1,
 h2
  {
     font-weight: normal;
-    color: green;
+    color: black;
     text-align: center;
-}
-
-
-   .light-control-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 20px;
-}
-
-/* For small screens (like iPhone Mini ~375px wide) */
-@media (max-width: 400px) {
-  .light-control-container {
-    padding: 10px;
-    gap: 6px;
-  }
-
-  .light-control-container button {
-    font-size: 0.8rem;
-    padding: 6px 10px;
-  }
-
-  .light-control-container img {
-    width: 70px;
-  }
 }
 
 
@@ -89,7 +63,7 @@ header {
     padding: 2rem;
     align-self: center;
     color: var(--justblack);
-    background-color: #96c7ee;
+    background-color: hsl(58, 39%, 85%);
 }
 
 main {
@@ -253,8 +227,91 @@ html:has(#mode-switcher [value="dark"]:checked) {
     color-scheme: dark;
 }
 
+/* 1. Position the Footer at the Bottom */
+.footer-nav {
+    /* Set the footer to a fixed position relative to the viewport */
+    position: fixed;
+    bottom: 0; /* Align it to the very bottom of the screen */
+    left: 0; /* Start it from the left edge */
+    width: 100%; /* Make it span the full width of the screen */
+    
+    /* Optional: Styling for visibility */
+    background-color: #f8f8f8; /* Light background color */
+    border-top: 1px solid #ccc; /* Separator line */
+    padding: 10px 0; /* Add some vertical space inside */
+    z-index: 1000; /* Ensure it stays above other content */
+}
 
+/* 2. Style the Navigation Container */
+.nav-container {
+    /* Use Flexbox to lay out the icons horizontally and space them evenly */
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly between buttons */
+    align-items: center;
+    max-width: 600px; /* Optional: Constrain width on very large screens */
+    margin: 0 auto; /* Center the container */
+}
 
+/* 3. Increase Icon Size and Padding */
+.nav-button {
+    /* Make the clickable area larger for easier tapping */
+    padding: 10px 20px; 
+    text-align: center;
+    text-decoration: none; /* Remove underline from links */
+    color: inherit;
+    /* Optional: Transition for smooth hover/active effects */
+    transition: background-color 0.3s; 
+}
+
+/* Target the image inside the button and make it significantly larger */
+.nav-button img {
+    /* Increase the icon dimensions */
+    width: 48px; 
+    height: 48px;
+    /* Remove any default margin/padding from the image */
+    display: block; 
+}
+
+/* Default styles for all screens (Mobile-First approach) */
+.light-control-container {
+    display: flex;
+    /* Use flexbox for easy alignment */
+    flex-direction: column;
+    /* Stack items vertically on small screens */
+    align-items: center;
+    /* Center items horizontally */
+    padding: 20px;
+    /* Add some space around the controls */
+    text-align: center;
+    /* Ensure any inline text is centered */
+}
+
+/* Ensure the image doesn't take up too much vertical space by limiting its width */
+#myImage {
+    margin: 15px 0;
+    /* Add space above and below the image */
+    max-width: 80%;
+    /* Ensure it's responsive and won't overflow */
+    height: auto;
+}
+
+media (min-width: 600px) {
+    .light-control-container {
+        flex-direction: row;
+        /* Layout items horizontally on larger screens */
+        justify-content: center;
+        /* Center the group of items */
+        gap: 30px;
+        /* Space between the items */
+    }
+
+    /* Ensure the buttons have the correct margin when laid out horizontally */
+    .light-control-container button:first-child {
+        margin-right: 30px;
+    }
+}
+
+/* 1. Position the Footer at the Bottom */
 .footer-nav {
     /* Set the footer to a fixed position relative to the viewport */
     position: fixed;
@@ -350,3 +407,6 @@ html:has(#mode-switcher [value="dark"]:checked) {
          height: 18px;
      }
  }
+
+
+
