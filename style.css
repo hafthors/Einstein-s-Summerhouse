@@ -255,33 +255,4 @@ html:has(#mode-switcher [value="dark"]:checked) {
 
 
 
-    .footer-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff; /* or your background color */
-  padding: 10px 0; /* adjust height */
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.nav-button img {
-  width: 20px; /* slightly smaller icons */
-  height: 20px;
-}
-
-/* For smaller screens */
-@media (max-width: 400px) {
-  .footer-nav {
-    padding: 6px 0; /* makes footer thinner */
-  }
-
-  .nav-button img {
-    width: 18px;
-    height: 18px;
-  }
-}
+   
