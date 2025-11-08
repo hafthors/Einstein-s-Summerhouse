@@ -253,53 +253,35 @@ html:has(#mode-switcher [value="dark"]:checked) {
     color-scheme: dark;
 }
 
-/* 1. Position the Footer at the Bottom */
-.footer-nav {
-    /* Set the footer to a fixed position relative to the viewport */
-    position: fixed;
-    bottom: 0; /* Align it to the very bottom of the screen */
-    left: 0; /* Start it from the left edge */
-    width: 100%; /* Make it span the full width of the screen */
-    
-    /* Optional: Styling for visibility */
-    background-color: #f8f8f8; /* Light background color */
-    border-top: 1px solid #ccc; /* Separator line */
-    padding: 10px 0; /* Add some vertical space inside */
-    z-index: 1000; /* Ensure it stays above other content */
+
+
+    .footer-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff; /* or your background color */
+  padding: 10px 0; /* adjust height */
 }
 
-/* 2. Style the Navigation Container */
 .nav-container {
-    /* Use Flexbox to lay out the icons horizontally and space them evenly */
-    display: flex;
-    justify-content: space-around; /* Distribute space evenly between buttons */
-    align-items: center;
-    max-width: 600px; /* Optional: Constrain width on very large screens */
-    margin: 0 auto; /* Center the container */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-/* 3. Increase Icon Size and Padding */
-.nav-button {
-    /* Make the clickable area larger for easier tapping */
-    padding: 10px 20px; 
-    text-align: center;
-    text-decoration: none; /* Remove underline from links */
-    color: inherit;
-    /* Optional: Transition for smooth hover/active effects */
-    transition: background-color 0.3s; 
-}
-
-/* Target the image inside the button and make it significantly larger */
 .nav-button img {
-    /* Increase the icon dimensions */
-    width: 48px; 
-    height: 48px;
-    /* Remove any default margin/padding from the image */
-    display: block; 
+  width: 20px; /* slightly smaller icons */
+  height: 20px;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-        padding-bottom: 70px;
-    }
+/* For smaller screens */
+@media (max-width: 400px) {
+  .footer-nav {
+    padding: 6px 0; /* makes footer thinner */
+  }
+
+  .nav-button img {
+    width: 18px;
+    height: 18px;
+  }
+}
